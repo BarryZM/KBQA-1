@@ -22,6 +22,7 @@ intents:
 - out_of_scope:
     use_entities: true
 
+
 entities:
 - attribute
 - car_series
@@ -65,17 +66,22 @@ responses:
   utter_greet:
   - image: "file:///E:/KBQA/data/1.jpg"
     text: "您好有什么为您服务的吗？"
+
   utter_goodbye:
   - text: "再见!"
   - text: "下次再见~"
+
   utter_iamabot:
   - text: "我是您的助手,小通!"
   - text: "我是小通!"
+
   utter_ask_rephrase:
   - text: "对不起，小通没有听清楚，您可以尝试换个表达方式!"
   - text: "不好意思，小通没有很明白，您可以换个方式~"
+
   utter_KBQA/enterprise_information:
   - text: '{answer}'
+
   utter_KBQA/vehicle_information:
   - text: '{answer}'
 

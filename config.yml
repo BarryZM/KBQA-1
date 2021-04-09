@@ -22,6 +22,7 @@ pipeline:
     "scoring_function": "f1_weighted"
   - name: "ResponseSelector"
     epochs: 100
+    retrieval_intent: KBQA
   - name: "FallbackClassifier"
     threshold: 0.3
     ambiguity_threshold: 0.1

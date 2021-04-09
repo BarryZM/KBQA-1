@@ -33,14 +33,14 @@ class ActionKBQA(Action):
         print(tracker.latest_message['intent']['name'])
 
         print("当前*子*意图：")
-        print(tracker.latest_message['response_selector']['default']['response']['intent_response_key'])
+        print(tracker.latest_message['response_selector']['KBQA']['response']['intent_response_key'])
 
         print("当前*子*意图回复模板：")
-        retrieval_intent_templete = tracker.latest_message['response_selector']['default']['response']['template_name']
+        retrieval_intent_templete = tracker.latest_message['response_selector']['KBQA']['response']['template_name']
         print(retrieval_intent_templete)
 
         # 当前子意图
-        retrieval_intent = tracker.latest_message['response_selector']['default']['response']['intent_response_key']
+        retrieval_intent = tracker.latest_message['response_selector']['KBQA']['response']['intent_response_key']
         # KBQA/enterprise_information
         if retrieval_intent == 'KBQA/enterprise_information':
             object_type = tracker.get_slot('object_type')
