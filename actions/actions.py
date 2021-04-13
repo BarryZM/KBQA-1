@@ -16,6 +16,7 @@ from rasa_sdk.events import SlotSet
 
 from knowledge_base.kg_operate import KnowledgeGraphOp
 from FAQ.faq_match import FAQ_match
+from FAQ.faq_match import FAQ_BASE_DIR
 
 class ActionKBQA(Action):
     def __init__(self):
@@ -198,7 +199,7 @@ class ActionFAQ(Action):
         # match = FAQ_match()
         message = tracker.latest_message['text']
         result = self.match.faq_match(message)
-        print(result)
+        print('FAQ match result: {}'.format(result))
         if result == []:
             dispatcher.utter_message(template='utter_ask_rephrase')
         else:
@@ -207,5 +208,10 @@ class ActionFAQ(Action):
                 dispatcher.utter_message(text=result['text'])
             else:
                 # to do: image的地址合成
-                dispatcher.utter_message(text=result['text'], image=result['image'])
+                img_files = result['image'].split(',')
+                imgs = []
+                for img_file in img_files:
+                    imgs.append(os.path.join(FAQ_BASE_DIR, 'data/faq_data/faq_imgs', str(img_file)+'.jpg'))
+
+                dispatcher.utter_message(text=result['text'], image=str(imgs))
         return []
