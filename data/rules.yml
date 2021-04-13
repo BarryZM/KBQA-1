@@ -22,9 +22,12 @@ rules:
   - intent: KBQA
   - action: action_kbqa
 
-
-
 - rule: resolve mention
   steps:
   - intent: mention_entity
   - action: action_resolve_mention
+
+- rule: FAQ
+  steps:
+  - intent: FAQ
+  - action: action_faq

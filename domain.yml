@@ -5,30 +5,24 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-- greet:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- mention_entity:
-    use_entities: true
-- KBQA:
-    use_entities: true
-- out_of_scope:
-    use_entities: true
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - mention_entity
+  - KBQA
+  - FAQ
+  - out_of_scope
+
 
 
 entities:
-- attribute
-- car_series
-- car_model
-- object_type
-- mention
+  - attribute
+  - car_series
+  - car_model
+  - object_type
+  - mention
 
 slots:
   car_series:
@@ -64,8 +58,7 @@ slots:
 
 responses:
   utter_greet:
-  - image: "file:///E:/KBQA/data/1.jpg"
-    text: "您好有什么为您服务的吗？"
+  - text: "您好有什么为您服务的吗？"
 
   utter_goodbye:
   - text: "再见!"
@@ -88,4 +81,5 @@ responses:
 actions:
 - action_kbqa
 - action_resolve_mention
+- action_faq
 

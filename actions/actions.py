@@ -6,14 +6,16 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
+import os
+import json
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
-
 from knowledge_base.kg_operate import KnowledgeGraphOp
+from FAQ.faq_match import FAQ_match
 
 class ActionKBQA(Action):
     def __init__(self):
@@ -181,3 +183,29 @@ class ActionResolveMention(Action):
 
         slots = [SlotSet('mention', None)]
         return slots
+
+class ActionFAQ(Action):
+    """
+    解决FAQ问题
+    """
+    def __init__(self):
+        self.match = FAQ_match()
+
+    def name(self) -> Text:
+        return "action_faq"
+
+    async def run(self, dispatcher, tracker: Tracker, domain: "DomainDict",) -> List[Dict[Text, Any]]:
+        # match = FAQ_match()
+        message = tracker.latest_message['text']
+        result = self.match.faq_match(message)
+        print(result)
+        if result == []:
+            dispatcher.utter_message(template='utter_ask_rephrase')
+        else:
+            result = json.loads(result[1])
+            if result['image'] == 'None':
+                dispatcher.utter_message(text=result['text'])
+            else:
+                # to do: image的地址合成
+                dispatcher.utter_message(text=result['text'], image=result['image'])
+        return []
