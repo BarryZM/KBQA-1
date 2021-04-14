@@ -53,6 +53,8 @@ nlu:
 
 - intent: KBQA/vehicle_information
   examples: |
+    - [g20](car_series)多少[钱](attribute)
+    - [v80](car_series)多少[钱](attribute)
     - [G20](car_series)有哪些[款式](object_type)
     - [旅行家G20](car_series)有哪些[车型](object_type)
     - [G20](car_series)的[市场价格](attribute)是多少
@@ -123,6 +125,8 @@ nlu:
     - 电视怎么使用
     - 电视使用的注意事项有哪些
     - 电视画面模糊
+    - 上汽大通怎么样
+    - 大通怎么样
 
 - synonym: 车型
   examples: |
@@ -136,6 +140,7 @@ nlu:
     - 指导价格
     - 市场价
     - 市场价格
+    - 钱
 
 - synonym: 旅行家G20
   examples: |
