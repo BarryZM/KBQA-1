@@ -50,6 +50,6 @@ class SentenceVector(Model):
 if __name__ == '__main__':
     bv = BertVector()
     message = '今天天气怎么样'
-    message_vec = bv.encode(message, 16)
+    message_vec = bv.encode(message, 32)
     print(message_vec)
 

@@ -16,8 +16,11 @@ if __name__ == "__main__":
         if message != 'quit':
             #             time1 = datetime.datetime.now()
             result = match.faq_match(message)
-            result = json.loads(result[1])
-            print('answer: {}'.format(result['text']))
+            if result != []:
+                result = json.loads(result[1])
+                print('answer: {}'.format(result['text']))
+            else:
+                print('rephrase question')
             #result = faq_match.judge_similar(message, faq_match.faq_qus, faq_match.faq_ans)
             # print(result[1])
 #             time2= datetime.datetime.now()

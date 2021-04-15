@@ -9,8 +9,7 @@ class KnowledgeGraphOp():
             self.graph = Graph("http://localhost:11004", username='neo4j', password='123456')
             print("database connect successful!")
         except:
-            print("database connect fail!")
-            sys.exit()
+            raise ValueError('database connect fail!')
 
     def query_nodes(self, label, entity_name=None, attribute=None, relationship=None, limit_num=5):
         """
