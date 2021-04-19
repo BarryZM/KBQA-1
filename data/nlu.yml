@@ -9,6 +9,9 @@ nlu:
     - 晚上好
     - 大家好
     - 嘿
+    - 你好，小通
+    - 你好,小通
+
 - intent: goodbye
   examples: |
     - 再见
@@ -39,12 +42,17 @@ nlu:
   examples: |
     - 你是谁呀
     - 你是机器人吗
+    - 你知道你是谁吗
+    - 你就是一个机器人
+    - 你是人类吗
+
 - intent: out_of_scope
   examples: |
     - 我想吃菜了
     - 今天天气很好
     - 这里有加油站吗
     - 我要去玩
+    - 啦啦啦
 - intent: KBQA/enterprise_information
   examples: |
     - 大通有那些车
