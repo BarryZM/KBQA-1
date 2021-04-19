@@ -56,6 +56,7 @@ nlu:
   examples: |
     - [g20](car_series)多少[钱](attribute)
     - [v80](car_series)多少[钱](attribute)
+    - [V90](car_series)多少[钱](attribute)
     - [G20](car_series)有哪些[款式](object_type)
     - [旅行家G20](car_series)有哪些[车型](object_type)
     - [G20](car_series)的[市场价格](attribute)是多少
@@ -171,6 +172,8 @@ nlu:
 - synonym: 生活家V90
   examples: |
     - 生活家v90
+    - v90
+    - V90
 
 - synonym: 生活家V90小额头
   examples: |

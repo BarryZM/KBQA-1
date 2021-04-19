@@ -6,7 +6,7 @@ import sys
 class KnowledgeGraphOp():
     def __init__(self):
         try:
-            self.graph = Graph("http://localhost:11004", username='neo4j', password='123456')
+            self.graph = Graph("http://localhost:7474", username='neo4j', password='123456')
             print("database connect successful!")
         except:
             raise ValueError('database connect fail!')
