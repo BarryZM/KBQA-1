@@ -72,6 +72,10 @@ responses:
   - text: "对不起，小通没有听清楚，您可以尝试换个表达方式!"
   - text: "不好意思，小通没有很明白，您可以换个方式~"
 
+  utter_out_of_scope:
+  - text: "对不起，小通还没学会这个功能"
+  - text: "不好意思，这个功能小通正在学习中"
+
   utter_KBQA/enterprise_information:
   - text: '{answer}'
 

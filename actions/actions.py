@@ -140,7 +140,7 @@ class ActionKBQA(Action):
                         if listed_items[0] == '车型':
                             car_model = listed_items[int(mention)]
 
-                    if car_model is None:
+                    if car_model is None :
                         for k, v in result.items():
                             answer = str(k) + ': ' + str(v)
                             dispatcher.utter_message(template='utter_KBQA/vehicle_information', answer=answer)
