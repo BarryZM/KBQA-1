@@ -55,22 +55,35 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
+  last_object_mention:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  last_attribute_mention:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 
 responses:
   utter_greet:
-  - text: "您好有什么为您服务的吗？"
+  - text: "您好,有什么为您服务的吗？"
+  - text: "很高兴为您服务!"
+  - text: "在呢，很高兴为您服务!"
 
   utter_goodbye:
   - text: "再见!"
   - text: "下次再见~"
 
   utter_iamabot:
-  - text: "我是您的助手,小通!"
-  - text: "我是小通!"
+  - text: "我是您的助手,小通!我知道很多上汽大通相关的知识哦,例如:大通有哪些房车"
+  - text: "我是小通!我知道很多上汽大通的信息,例如:大通有哪些房车?"
 
   utter_ask_rephrase:
   - text: "对不起，小通没有听清楚，您可以尝试换个表达方式!"
   - text: "不好意思，小通没有很明白，您可以换个方式~"
+  - text: "哎呀，我好像没有听明白，您可以再说一遍吗"
 
   utter_out_of_scope:
   - text: "对不起，小通还没学会这个功能"

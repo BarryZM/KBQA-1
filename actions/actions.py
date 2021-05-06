@@ -15,12 +15,14 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 from knowledge_base.kg_operate import KnowledgeGraphOp
+from knowledge_base.schemas import pron_mention
 from FAQ.faq_match import FAQ_match
 from FAQ.faq_match import FAQ_BASE_DIR
 
 class ActionKBQA(Action):
     def __init__(self):
         self.KGOp = KnowledgeGraphOp()
+
 
     def name(self) -> Text:
         return "action_kbqa"
@@ -41,6 +43,7 @@ class ActionKBQA(Action):
         print("当前*子*意图回复模板：")
         retrieval_intent_templete = tracker.latest_message['response_selector']['KBQA']['response']['template_name']
         print(retrieval_intent_templete)
+        print('**'*20)
 
         # 当前子意图
         retrieval_intent = tracker.latest_message['response_selector']['KBQA']['response']['intent_response_key']
@@ -96,14 +99,37 @@ class ActionKBQA(Action):
             car_model = tracker.get_slot('car_model')
             mention = tracker.get_slot('mention')
             listed_items = tracker.get_slot('listed_items')
+            last_object_mention = tracker.get_slot('last_object_mention')
+            last_attribute_mention = tracker.get_slot('last_attribute_mention')
 
-            if listed_items and mention:
-                if listed_items[0] == '车系':
-                    car_series = listed_items[int(mention)]
+            # 如果提问的是新车系的话, 则之前的一些插槽需要解决一下
+            new_request = car_series != last_object_mention
+            if new_request:
+                # 在最后返回时，为了下一轮使用car_model信息，所以没有清除，在这里判断一下，如果是新车系，旧的就删除了
+                car_model = None
+
+
+
+
+            if mention:
+                if listed_items and mention not in pron_mention:
+                    # 在指代时,优先找和当前轮最近的主体
+                    if listed_items[0] == '车系':
+                        car_series = listed_items[int(mention)]
+
 
             if not car_series:
                 dispatcher.utter_message(template='utter_KBQA/vehicle_information', answer='不好意思，小通需要知道是哪个车系~')
                 return []
+
+            # 当上下两句提到的车系不相同时，如果当前没有提问的属性, 则用上一轮的 --》 g20的呢？
+            # if car_series != last_object_mention and attribute is None:
+            #     attribute = last_attribute_mention
+
+            # to solve example: 第二个的呢
+            # if car_series == last_object_mention and attribute is None:
+            #     if mention:
+            #         attribute = last_attribute_mention
 
             # 查询 由车系查车型信息
             if object_type:
@@ -136,11 +162,13 @@ class ActionKBQA(Action):
                     dispatcher.utter_message(template='utter_KBQA/vehicle_information', answer='小通为您查询到如下结果:')
                     # 判断是否是具体的某个车型
                     # 确定指代
-                    if listed_items and mention:
-                        if listed_items[0] == '车型':
-                            car_model = listed_items[int(mention)]
+                    if mention:
+                        if listed_items and mention not in pron_mention:
+                            if listed_items[0] == '车型':
+                                car_model = listed_items[int(mention)]
 
-                    if car_model is None :
+                    if car_model is None:
+                        # 如果没有具体车型，那么在listed_items中更新指代的车型
                         for k, v in result.items():
                             answer = str(k) + ': ' + str(v)
                             dispatcher.utter_message(template='utter_KBQA/vehicle_information', answer=answer)
@@ -152,8 +180,10 @@ class ActionKBQA(Action):
                     dispatcher.utter_message(template='utter_KBQA/enterprise_information', answer='抱歉，小通还没学会这个问题，您可以换个问题！')
 
 
-                slots = [SlotSet('attribute', None), SlotSet('car_model', None), SlotSet('car_series', car_series),
-                         SlotSet('object_type', None), SlotSet('mention', None)]
+
+                slots = [SlotSet('attribute', attribute), SlotSet('car_model', car_model), SlotSet('car_series', car_series),
+                         SlotSet('object_type', None), SlotSet('mention', None), SlotSet('last_object_mention', car_series),
+                         SlotSet('last_attribute_mention', attribute), SlotSet('listed_items', listed_items)]
                 return slots
 
             else:
@@ -185,6 +215,20 @@ class ActionResolveMention(Action):
         slots = [SlotSet('mention', None)]
         return slots
 
+# class ActionResolveMention(Action):
+#     """
+#     解决指代问题
+#     """
+#     def name(self) -> Text:
+#         return "action_resolve_mention"
+#
+#     async def run(self, dispatcher, tracker: Tracker, domain: "DomainDict",) -> List[Dict[Text, Any]]:
+#         mention = tracker.get_slot('mention')
+#         listed_items = tracker.get_slot('listed_items')
+#         last_object_mention = tracker.get_slot('last_object_mention')
+
+
+
 class ActionFAQ(Action):
     """
     解决FAQ问题
@@ -198,6 +242,7 @@ class ActionFAQ(Action):
     async def run(self, dispatcher, tracker: Tracker, domain: "DomainDict",) -> List[Dict[Text, Any]]:
         # match = FAQ_match()
         message = tracker.latest_message['text']
+
         result = self.match.faq_match(message)
         print('FAQ match result: {}'.format(result))
         if result == []:

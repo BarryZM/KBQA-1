@@ -21,6 +21,14 @@ def find_head(attribute):
 
     return result
 
+def composite_attribute(attribute):
+    rules = ['外观', '颜色']
+    if rules[0] in attribute and rules[1] in attribute:
+        attribute = '外观颜色'
+
+    return attribute
+
+
 
 
 if __name__ == '__main__':
