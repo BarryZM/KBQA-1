@@ -28,6 +28,16 @@ def composite_attribute(attribute):
 
     return attribute
 
+def contain_attribute(attribute, limit_att):
+    flag = False
+    for att in attribute:
+        if att in limit_att:
+            flag = True
+            break
+
+    return flag
+
+
 
 
 

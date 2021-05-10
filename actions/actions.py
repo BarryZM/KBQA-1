@@ -15,7 +15,8 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 from knowledge_base.kg_operate import KnowledgeGraphOp
-from knowledge_base.schemas import pron_mention
+from knowledge_base.schemas import pron_mention, enterprise_info
+from knowledge_base.utils import contain_attribute
 from FAQ.faq_match import FAQ_match
 from FAQ.faq_match import FAQ_BASE_DIR
 
@@ -52,7 +53,9 @@ class ActionKBQA(Action):
             object_type = tracker.get_slot('object_type')
             attribute = tracker.get_slot('attribute')
 
-            if attribute and object_type is None:
+            flag = contain_attribute(attribute, limit_att=enterprise_info)
+
+            if flag  and object_type is None:
                 result = self.KGOp.query_attribute('品牌', entity_name='上汽大通', attribute=attribute)
                 # 防止result为空
                 if len(result) != 0:

@@ -121,6 +121,7 @@ nlu:
     - [v80](car_series)的呢
     - [v80](car_series)用的什么[油](attribute)
     - [v80](car_series)的[油箱](attribute)多大
+    - [v90](car_series)的[油箱](attribute)有多大
     - [v80](car_series)的[燃油](attribute)是多少
     - [g20]呢
     - [v80](car_series)的呐
