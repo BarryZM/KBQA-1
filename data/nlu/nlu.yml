@@ -70,6 +70,76 @@ nlu:
 
 - intent: KBQA/vehicle_information
   examples: |
+    - [旅行家G20](car_series)的[车型](object_type)有哪些？
+    - [G20](car_series)的[厂商](attribute)是哪家？
+    - [旅行家g20](car_series)的[能源类型](attribute)有哪些？
+    - [旅行家g20](car_series)什么时候[上市](attribute)的？
+    - [旅行家G20](car_series)是否[停售](attribute)？
+    - [旅行家G20](car_series)[市场指导价](attribute)是多少？
+    - [旅行家G20](car_series)[座位数](attribute)有多少？
+    - [旅行家G20](car_series)[轴距](attribute)多大？
+    - [旅行家g20](car_series)[尺寸](attribute)多大？
+    - [G20](car_series)[发动机型式](attribute)有哪些多？
+    - [旅行家G20](car_series)[发动机排量](attribute)多少？
+    - [旅行家G20](car_series)[发动机排放标准](attribute)是什么？
+    - [旅行家G20](car_series)[发动机额定功率](attribute)是多少？
+    - [旅行家G20](car_series)[发动机最大扭矩](attribute)是多少？
+    - [旅行家G20](car_series)[变速箱](attribute)是什么类型？
+    - [旅行家G20](car_series)的[燃油](attribute)是什么类型？
+    - [旅行家G20](car_series)的[燃油箱容积](attribute)是多少？
+    - [旅行家G20](car_series)的[尿素罐容积](attribute)是多少？
+    - [旅行家G20](car_series)的[驱动形式](attribute)是什么类型？
+    - [G20](car_series)的[前后悬架](attribute)是什么类型？
+    - [旅行家g20](car_series)的[双侧滑移门](attribute)是什么类型？
+    - [旅行家G20](car_series)的[清水箱](attribute)有多大？
+    - [旅行家G20](car_series)的[灰水箱](attribute)有多大？
+    - [旅行家G20](car_series)的[电能系统](attribute)是什么类型？
+    - [旅行家G20](car_series)的[车身电子稳定系统](attribute)是什么类型？
+    - [旅行家G20](car_series)是否配备[360全景影像](attribute)？
+    - [旅行家G20](car_series)是否配备[前后雷达](attribute)？
+    - [旅行家G20](car_series)的[胎压监测](attribute)是什么类型？
+    - [旅行家G20](car_series)是否配备[安全气囊](attribute)？
+    - [旅行家G20](car_series)的[儿童座椅安装点](attribute)是什么类型？
+    - [旅行家G20](car_series)的[外后视镜](attribute)是什么类型？
+    - [旅行家G20](car_series)是否配备[灭火器](attribute)？
+    - [旅行家G20](car_series)的[外观颜色](attribute)有哪些？
+    - [旅行家G20](car_series)是否配备[车身贴花](attribute)？
+    - [旅行家G20](car_series)的[内饰颜色](attribute)有哪些？
+    - [旅行家G20](car_series)是否配备[对向卡座](attribute)？
+    - [旅行家G20](car_series)是否配备[一体式橱柜](attribute)？
+    - [G20](car_series)是否配备[车尾抽拉式淋浴水龙头](attribute)？
+    - [旅行家G20](car_series)是否配备[主驾八向电动座椅](attribute)？
+    - [旅行家G20](car_series)是否配备[副驾四向手动调节座椅](attribute)？
+    - [旅行家G20](car_series)是否配备[天窗](attribute)？
+    - [旅行家G20](car_series)是否配备[LED前阅读灯](attribute)？
+    - [旅行家G20](car_series)是否配备[氛围灯](attribute)？
+    - [旅行家G20](car_series)是否配备[前大灯](attribute)？
+    - [旅行家G20](car_series)是否配备[日间行车灯](attribute)？
+    - [旅行家G20](car_series)是否配备[LED尾灯](attribute)？
+    - [旅行家G20](car_series)的[轮胎](attribute)是什么类型？
+    - [旅行家G20](car_series)是否配备[斑马智行互联系统](attribute)？
+    - [旅行家G20](car_series)的[触控大屏](attribute)有哪些类型？
+    - [旅行家G20](car_series)是否配备[车载扬声系统](attribute)？
+    - [旅行家G20](car_series)的[驾驶模式](attribute)有哪些？
+    - [旅行家G20](car_series)是否配备[电动助力转向](attribute)功能？
+    - [旅行家G20](car_series)是否配备[电子驻车制动](attribute)？
+    - [旅行家G20](car_series)是否配备[自动驻车系统](attribute)？
+    - [旅行家G20](car_series)是否配备[智能遥控钥匙](attribute)？
+    - [旅行家G20](car_series)是否配备[发动机自动启停系统](attribute)？
+    - [旅行家g20](car_series)是否配备[无钥匙进入及一键启动](attribute)功能？
+    - [旅行家g20](car_series)是否配备[真皮多功能方向盘](attribute)?
+    - [旅行家G20](car_series)是否配备[定速巡航](attribute)?
+    - [g20](car_series)是否配备[空调](attribute)？
+    - [G20](car_series)是否配备[雨刮](attribute)？
+    - [旅行家G20](car_series)是否配备[帐篷](attribute)？
+    - [旅行家G20](car_series)是否配备[水电控制面板](attribute)？
+    - [旅行家G20](car_series)是否配备[插座](attribute)?
+    - [旅行家G20](car_series)是否配备[开关](attribute)?
+    - [G20](car_series)是否配备[车内照明系统](attribute)？
+    - [旅行家G20](car_series)是否配备[重力加水口](attribute)?
+    - [旅行家G20](car_series)是否配备[市电充电口](attribute)?
+    - [旅行家G20](car_series)是否配备[外置抽拉厨房](attribute)？
+    - [旅行家G20](car_series)是否配备[户外椅子](attribute)?
     - [g20](car_series)多少[钱](attribute)
     - [v80](car_series)多少[钱](attribute)
     - [V90](car_series)多少[钱](attribute)
@@ -166,16 +236,99 @@ nlu:
 
 - intent: FAQ
   examples: |
+    - 苹果手机连接之后没有网络服务怎么办
+    - 苹果没有网络
+    - 手机连不上网
+    - 手机连接后没有声音
+    - 为什么手机连接后没有声音
+    - 手机连上后怎么没声音
+    - 主机没有声音
+    - 为什么主机没有声音
+    - 后排主机没有声音怎么办
+    - 电视家没有声音
+    - 电视家怎么没声音啊
+    - 电视家播放的时候没声音怎么办
+    - 手机连接后没办法投屏
+    - 手机怎么投不了屏
+    - 手机连到后排的USB后没办法投屏怎么办
+    - 没办法定制开机欢迎语怎么办
+    - 怎么定制开机欢迎语
     - 冰箱怎么使用
+    - INDEL冰箱怎么使用
     - INDEL冰箱怎么打开
+    - INDEL冰箱怎么调节温度
+    - 多美达冰箱怎么使用
+    - 冰箱使用有什么注意的地方
+    - 冰箱使用的注意事项有哪些
+    - 多美达冰箱怎么打开
     - 照明设备怎么使用
     - 照明灯怎么使用
+    - 厨房灯怎么使用
+    - 卫生间灯怎么使用
     - 阅读灯怎么使用
+    - 氛围灯怎么使用
+    - 车外照明设备怎么使用
     - 遮阳棚灯怎么使用
+    - 照明设备使用要注意什么
+    - 照明设备使用注意事项
     - 电磁炉怎么使用
-    - 电视怎么使用
+    - 电磁炉使用要注意什么
+    - 电磁炉使用注意事项
+    - 影音娱乐系统怎么使用
+    - 智能电视怎么使用
+    - 电视使用要注意什么
     - 电视使用的注意事项有哪些
+    - 电视坏了怎么办
+    - 电视怎么使用
+    - 电视画面模糊怎么办
     - 电视画面模糊
-    - 上汽大通怎么样
-    - 大通怎么样
+    - 电视画面卡顿
+    - 电视画面卡顿怎么办
+    - 电视功能异常怎么办
+    - 热水设备怎么使用
+    - 热水设备使用要注意什么
+    - 热水设备使用的注意事项有哪些
+    - 插座在哪里
+    - 交流插座在哪里
+    - USB插座在哪里
+    - 卫生间怎么使用
+    - 卫生间使用要注意什么
+    - 卫生间使用的注意事项有哪些
+    - 晾衣架怎么使用
+    - 毛巾架怎么使用
+    - 座便器怎么使用
+    - 排气扇怎么使用
+    - 车顶排气窗怎么打开
+    - 外推窗怎么打开
+    - 车侧外推窗怎么使用
+    - 电动升降桌怎么使用
+    - 智能设备怎么使用
+    - 场景功能怎么使用
+    - 什么是语音全双工
+    - 什么是延时聆听
+    - 什么是全局免唤醒
+    - 什么是场景内免唤醒
+    - 什么是双音区
+    - 全局免唤醒指令有哪些
+    - 场景内免唤醒指令有哪些
+    - 怎么给语音助手起名字
+    - 常用语音指令有哪些
+    - 语音导航怎么使用
+    - 怎么使用语音指令
+    - 怎么搜索音乐
+    - 怎么搜索节目
+    - 怎么音频控制
+    - 怎么控制车辆
+    - 怎么控制空调
+    - 怎么给座椅加热
+
+
+- lookup: car_series
+  examples: |
+    - 旅行家G20
+    - 旅行家V80
+    - 旅行家V90
+    - 生活家V90
+    - 生活家V90小额头
+    - 生活家V90别墅版
 

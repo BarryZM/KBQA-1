@@ -29,11 +29,18 @@ def composite_attribute(attribute):
     return attribute
 
 def contain_attribute(attribute, limit_att):
+    '''
+
+    :param attribute:
+    :param limit_att:
+    :return:
+    '''
     flag = False
-    for att in attribute:
-        if att in limit_att:
-            flag = True
-            break
+    if attribute:
+        for att in attribute:
+            if att in limit_att:
+                flag = True
+                break
 
     return flag
 

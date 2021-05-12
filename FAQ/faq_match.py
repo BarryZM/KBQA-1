@@ -6,21 +6,21 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from FAQ.keyword_processer import KeywordProcesser
 from FAQ.BertVector import BertVector
-
+from FAQ.dict_way import get_synonym_dic
 FAQ_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-faq_file = os.path.join(FAQ_BASE_DIR, 'data/faq_data/FAQ.xlsx')
-faq_model_dir = os.path.join(FAQ_BASE_DIR, 'data/faq_data')
 
+faq_model_dir = os.path.join(FAQ_BASE_DIR, 'data/faq_data')
+faq_file = os.path.join(faq_model_dir, 'FAQ.xlsx')
+synonym_file = os.path.join(faq_model_dir,'shangqi_synonym.csv')
+# synonym_file = r'C:\Users\xuchanghua\PycharmProjects\KBQA-master\data\faq_data\shangqi_synonym.csv'
 
 # print('faq_model_dir ->path:{}'.format(faq_model_dir))
 # print('faq_file ->path:{}'.format(faq_file))
 
 stop_word_file = os.path.join(faq_model_dir, 'stop_word.csv')
 
-
 bv = BertVector()
 threshold = 0.8
-
 
 def rm_stword(sentence, stword):
     '''
@@ -63,6 +63,7 @@ class FAQ_match(object):
         self.cv = CountVectorizer()  #创建词袋数据结构
         self.alpha = threshold  #设置相似度的阈值
         question_list = []
+        self.q_kw = get_synonym_dic()
         self.faq_dict = {}  #加载问题和答案
         self.faq_qus = []  #加载问题
         self.faq_ans = []  #加载答案
@@ -109,7 +110,7 @@ class FAQ_match(object):
         ##########################################################################################################
 
         entity_file = os.path.join(faq_model_dir,'shangqi_entity.csv')
-        # entity_file = r'E:\dialogue system\CarDialogueSystem\data\faq_data\shangqi_entity.csv'
+        # entity_file = r'E:\dialogue system\CarDialogueSystem\data\faq_data\question.csv'
         with codecs.open(entity_file, 'r','utf-8') as reader:
             for line in reader.readlines():
                 entity_dict[line.strip()] = line.strip()
@@ -119,9 +120,10 @@ class FAQ_match(object):
         # pd_dt = pd.read_csv(r'C:\Users\xuchanghua\PycharmProjects\rasa_faq\data\faq\skii_synonym.csv')  #加载同义词库
         #######################################################################################################
 
-        synonym_file = os.path.join(faq_model_dir,'shangqi_synonym.csv')
+        # synonym_file = os.path.join(faq_model_dir,'shangqi_synonym.csv')
 
-        # synonym_file = r'E:\dialogue system\CarDialogueSystem\data\faq_data\shangqi_synonym.csv'
+        # synonym_file = r'C:\Users\xuchanghua\PycharmProjects\KBQA-master\data\faq_data\shangqi_synonym.csv'
+        # synonym_file = r'E:\dialogue system\CarDialogueSystem\data\faq_data\question_keyword.csv'
 
         pd_dt = pd.read_csv(synonym_file)
 
@@ -144,8 +146,8 @@ class FAQ_match(object):
         flag = 0
         kw_1_flag = -1
         kw_2_flag = -1
-        kw_1 = kw_1.strip().replace(' ', '').lower()
-        kw_2 = kw_2.strip().replace(' ', '').lower()
+        # kw_1 = kw_1.strip().replace(' ', '').lower()
+        # kw_2 = kw_2.strip().replace(' ', '').lower()
         if kw_1 == kw_2:
             flag = 1
         try:
@@ -239,7 +241,29 @@ class FAQ_match(object):
         sim_ans = ans_list[max_index]
 
         return (sim_qus, sim_ans)
-
+    def use_dict(self,message):
+        print('调用字典')
+        answer_dict = {}
+        for k in self.q_kw:
+            for value in self.q_kw[k]:
+                if value in message:
+                    if k in answer_dict:
+                        if answer_dict[k] < len(value):
+                            answer_dict[k] = len(value)
+                    else:
+                        answer_dict[k] = len(value)
+                    # print('k', k, value)
+        ans = ''
+        if len(answer_dict) == 0:
+            print('没有找到')
+            faq_result = []
+        else:
+            max_value = 0
+            for k in answer_dict:
+                if len(self.q_kw[k]) > max_value:
+                    ans = k
+        faq_result = ['', ans]
+        return faq_result
     def faq_match(self, question):
         '''
         :param question: 需要匹配的问题
@@ -256,6 +280,7 @@ class FAQ_match(object):
         # print('qus_rm_entity: ', qus_rm_entity)
         if len(kw_list) == 0:
             qus_rm_entity = question
+
         else:
             for kw in kw_list:
                 qus_rm_entity = qus_rm_entity.replace(kw[2], '')
@@ -277,10 +302,16 @@ class FAQ_match(object):
             sim_ans_list = []
             sim_prob_list = []
             (qus_index, entity_same) = self.faq_qus_choose(question, qs_list)
-            # print('qus_index: {}, entity_same: {}'.format(qus_index, entity_same))
+
+            #
+            if len(entity_same) == 0:
+                # 没找到主语的情况
+                faq_result = self.use_dict(question)
+                return faq_result
+            #
+
             if len(qus_index) == 0:
                 faq_result = []
-
             if len(qus_index) == 1:
                 faq_result = [qs_list[qus_index[0]], ans_list[qus_index[0]]]
             if len(qus_index) > 1:
@@ -303,25 +334,28 @@ class FAQ_match(object):
                         sim_prob_list.append(prob_list[no])
                     max_no = sim_prob_list.index(max(sim_prob_list))
                     faq_result = [sim_qs_list[max_no], sim_ans_list[max_no]]
+        # 用字典情况
+        # if len(kw_list) != 0:
+        #     # 找到长度最大的关键字
+        #     max_len_kw = ''
+        #     for key_word in kw_list:
+        #         k_word = key_word[2]
+        #         if len(k_word) > len(max_len_kw):
+        #             max_len_kw = k_word
+        #     for k
 
+        if len(faq_result) == 0:
+           faq_result = self.use_dict()
         return faq_result
 
 if __name__ == "__main__":
     faq_match = FAQ_match()
-    # print(faq_match.faq_qus)
-    # print(len(faq_match.faq_qus))
-    # print(faq_match.faq_ans)
-    # print(len(faq_match.faq_ans))
-
-    while (True):
+    while(True):
         message = input('Enter your question:')
         if message != 'quit':
             #             time1 = datetime.datetime.now()
-            result = faq_match.faq_match(message)
-            #result = faq_match.judge_similar(message, faq_match.faq_qus, faq_match.faq_ans)
-            # print(result[1])
-#             time2= datetime.datetime.now()
-#             aa = time2 - time1
-#             print (aa)
+            result= faq_match.faq_match(message)
+            print('回答',result[1])
+            # print(qus_rm_entity)
         else:
             break

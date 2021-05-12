@@ -8,7 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 import os
 import json
-
+import jieba
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -248,18 +248,21 @@ class ActionFAQ(Action):
 
         result = self.match.faq_match(message)
         print('FAQ match result: {}'.format(result))
-        if result == []:
+        if result == ['', '']:
             dispatcher.utter_message(template='utter_ask_rephrase')
-        else:
-            result = json.loads(result[1])
-            if result['image'] == 'None':
-                dispatcher.utter_message(text=result['text'])
-            else:
-                # to do: image的地址合成
-                img_files = result['image'].split(',')
-                imgs = []
-                for img_file in img_files:
-                    imgs.append(os.path.join(FAQ_BASE_DIR, 'data/faq_data/faq_imgs', str(img_file)+'.jpg'))
 
-                dispatcher.utter_message(text=result['text'], image=str(imgs))
+        else:
+
+            answer = result[1]
+            dispatcher.utter_message(text=answer)
+            # if result['image'] == 'None':
+            #     dispatcher.utter_message(text=result['text'])
+            # else:
+            #     # to do: image的地址合成
+            #     img_files = result['image'].split(',')
+            #     imgs = []
+            #     for img_file in img_files:
+            #         imgs.append(os.path.join(FAQ_BASE_DIR, 'data/faq_data/faq_imgs', str(img_file)+'.jpg'))
+            #
+            #     dispatcher.utter_message(text=result['text'], image=str(imgs))
         return []
