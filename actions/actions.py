@@ -83,7 +83,7 @@ class ActionKBQA(Action):
                         listed_items.append(v)
                         dispatcher.utter_message(template='utter_KBQA/enterprise_information', answer=answer)
 
-                    slots = [SlotSet('object_type', None), SlotSet('listed_items', listed_items)]
+                    slots = [SlotSet('object_type', None), SlotSet('listed_items', listed_items), SlotSet('attribute', None)]
                     return slots
 
 
