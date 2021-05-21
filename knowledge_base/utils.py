@@ -30,7 +30,7 @@ def composite_attribute(attribute):
 
 def contain_attribute(attribute, limit_att):
     '''
-
+    判断 attribute 是否 有 att 在 limit_att 中
     :param attribute:
     :param limit_att:
     :return:
@@ -44,10 +44,39 @@ def contain_attribute(attribute, limit_att):
 
     return flag
 
+def check_query_result(result):
+    """
+    判断 neo4j 查询结果是否为空
+    :param result: {'car model':{ 'att1': value}, 'car model':{'att2': value}} or list []
+    :return:
+    """
+    if isinstance(result, dict):
+        result_keys = result.keys()
+        if len(result_keys) == 0:
+            return False
+
+        result_values = result.values()
+        for v in result_values:
+            if v != {}:
+                return True
+
+        return False
+
+    if isinstance(result, list):
+        if len(result) == 0:
+            return False
+        else:
+            return True
+
+
+
+
+
 
 
 
 
 if __name__ == '__main__':
     result = find_head(['上市时间', '车身电子稳定系统',  "能源类型"])
+    result = check_query_result({'car model 1':{1:3}, 'car model 2':{ }})
     print(result)

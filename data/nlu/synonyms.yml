@@ -160,7 +160,786 @@ nlu:
   examples: |
     - 油
 
+
 - synonym: '燃油箱容积'
   examples: |
     - 油箱
     - 油箱容积
+
+- synonym: '能源类型'
+  examples: |
+    - 能源类型
+    - 能源类别
+    - 能源
+
+- synonym: '停售'
+  examples: |
+    - 停售
+    - 停止销售
+
+- synonym: '轴距'
+  examples: |
+    - 轴距
+
+- synonym: '扬声器个数'
+  examples: |
+    - 扬声器个数
+    - 扬声器数量
+    - 扬声器
+    - 扬声器数目
+
+- synonym: '双侧滑移门'
+  examples: |
+    - 双侧滑移门
+    - 滑移门
+
+- synonym: '变速箱'
+  examples: |
+    - 变速箱
+
+- synonym: '前后悬架'
+  examples: |
+    - 前后悬架
+    - 悬架
+
+- synonym: '驱动形式'
+  examples: |
+    - 驱动形式
+    - 驱动
+
+- synonym: '发动机排量'
+  examples: |
+    - 发动机排量
+    - 排量
+
+- synonym: '发动机排放标准'
+  examples: |
+    - 发动机排放标准
+    - 排放标准
+
+- synonym: '发动机额定功率'
+  examples: |
+    - 发动机额定功率
+    - 额定功率
+
+- synonym: '发动机最大扭矩'
+  examples: |
+    - 发动机最大扭矩
+    - 最大扭矩
+
+- synonym: '发动机自动启停系统'
+  examples: |
+    - 发动机自动启停系统
+    - 启停系统
+    - 自动启停系统
+    - 发动机启停系统
+
+- synonym: '驱动形式'
+  examples: |
+    - 驱动形式
+    - 驱动
+
+- synonym: '最高车速'
+  examples: |
+    - 最高车速
+    - 最高时速
+    - 最快车速
+
+- synonym: 'Autohold自动驻车系统'
+  examples: |
+    - Autohold自动驻车系统
+    - 驻车系统
+
+- synonym: '360全景影像'
+  examples: |
+    - 360全景影像
+
+- synonym: '尾床尺寸'
+  examples: |
+    - 尾床尺寸
+    - 尾床大小
+
+- synonym: '额头床尺寸'
+  examples: |
+    - 额头床尺寸
+    - 额头床大小
+
+- synonym: '户外椅子'
+  examples: |
+    - 户外椅子
+    - 椅子
+
+- synonym: '外观尺寸'
+  examples: |
+    - 外观尺寸
+    - 外观大小
+
+- synonym: '床铺尺寸'
+  examples: |
+    - 床铺尺寸
+    - 床铺大小
+
+- synonym: '燃油箱容积'
+  examples: |
+    - 燃油箱容积
+    - 燃油箱大小
+    - 燃油箱体积
+
+- synonym: '尿素罐容积'
+  examples: |
+    - 尿素罐容积
+    - 尿素罐大小
+    - 尿素罐体积
+
+- synonym: '制动系统'
+  examples: |
+    - 制动系统
+
+- synonym: '悬架系统'
+  examples: |
+    - 悬架系统
+    - 悬架
+
+- synonym: '轮胎'
+  examples: |
+    - 轮胎
+    - 车胎
+
+- synonym: '轮胎规格'
+  examples: |
+    - 轮胎规格
+
+- synonym: '后轮胎形式'
+  examples: |
+    - 后轮胎形式
+    - 后胎形式
+    - 后轮胎款式
+
+- synonym: '车载冰箱'
+  examples: |
+    - 车载冰箱
+    - 冰箱
+
+- synonym: '清水箱'
+  examples: |
+    - 清水箱
+
+- synonym: '灰水箱'
+  examples: |
+    - 灰水箱
+
+- synonym: '驾驶舱中控屏'
+  examples: |
+    - 驾驶舱中控屏
+    - 驾驶舱控屏
+    - 中控屏
+
+- synonym: '生活舱集控屏'
+  examples: |
+    - 生活舱集控屏
+    - 集控屏
+    - 生活舱控屏
+
+- synonym: '电能系统'
+  examples: |
+    - 电能系统
+
+- synonym: '高级驾驶辅助系统'
+  examples: |
+    - 高级驾驶辅助系统
+    - 辅助系统
+    - 高级驾驶系统
+    - 驾驶辅助系统
+    - 驾驶辅助
+
+- synonym: '智能交流配电盒'
+  examples: |
+    - 智能交流配电盒
+    - 配电盒
+    - 电盒
+    - 智能配电盒
+    - 交流配电盒
+
+- synonym: '车身电子稳定系统'
+  examples: |
+    - 稳定系统
+    - 电子稳定系统
+    - 车身稳定系统
+
+- synonym: '水电控制面板'
+  examples: |
+    - 水电控制面板
+    - 控制面板
+    - 水电控制
+
+- synonym: '主副驾安全气囊'
+  examples: |
+    - 主副驾安全气囊
+    - 安全气囊
+    - 主驾安全气囊
+    - 副驾安全气囊
+
+- synonym: '乘客区座椅三点式安全带'
+  examples: |
+    - 乘客区座椅三点式安全带
+    - 乘客区座椅安全带
+    - 三点式安全带
+    - 安全带
+
+- synonym: '儿童座椅安装点'
+  examples: |
+    - 儿童座椅安装点
+
+- synonym: '雷达'
+  examples: |
+    - 雷达
+
+- synonym: '前后雷达'
+  examples: |
+    - 前后雷达
+
+- synonym: '倒车雷达'
+  examples: |
+    - 倒车雷达
+
+- synonym: '胎压监测'
+  examples: |
+    - 胎压监测
+
+- synonym: '倒车影像'
+  examples: |
+    - 倒车影像
+    - 影像
+
+- synonym: '发动机电子芯片防盗系统'
+  examples: |
+    - 发动机电子芯片防盗系统
+    - 芯片防盗系统
+    - 电子芯片防盗
+    - 防盗系统
+    - 电子芯片防盗
+    - 芯片防盗
+
+- synonym: '车尾抽拉式淋浴水龙头'
+  examples: |
+    - 车尾抽拉式淋浴水龙头
+    - 水龙头
+    - 淋浴水龙头
+
+- synonym: '主驾八向电动座椅'
+  examples: |
+    - 主驾八向电动座椅
+    - 电动座椅
+    - 电动椅
+
+- synonym: '副驾四向手动调节座椅'
+  examples: |
+    - 副驾四向手动调节座椅
+    - 手动调节座椅
+    - 调节座椅
+    - 调节椅
+
+- synonym: '警报器'
+  examples: |
+    - 警报器
+
+- synonym: '烟雾报警器'
+  examples: |
+    - 烟雾报警器
+
+- synonym: '一氧化碳报警器'
+  examples: |
+    - 一氧化碳报警器
+
+- synonym: '灭火器'
+  examples: |
+    - 灭火器
+
+- synonym: '外观颜色'
+  examples: |
+    - 外观颜色
+
+- synonym: '车身贴花'
+  examples: |
+    - 贴花
+
+- synonym: '内饰颜色'
+  examples: |
+    - 内饰颜色
+
+- synonym: '内饰风格'
+  examples: |
+    - 内饰风格
+    - 内饰
+    - 装饰风格
+
+- synonym: '原厂专属标识套件'
+  examples: |
+    - 原厂专属标识套件
+    - 原厂标识套件
+    - 标识套件
+    - 专属标识套件
+
+- synonym: 'LED前阅读灯'
+  examples: |
+    - LED前阅读灯
+    - 阅读灯
+
+- synonym: 'LED自动感应前大灯'
+  examples: |
+    - 自动感应灯
+    - LED自动感应前大灯
+    - 感应灯
+
+- synonym: '天空之境流光LED尾灯'
+  examples: |
+    - 天空之境流光LED尾灯
+    - LED尾灯
+    - 流光灯
+
+- synonym: '自动感应LED大灯'
+  examples: |
+    - 自动感应LED大灯
+    - 自动感应LED
+    - LED大灯
+    - 感应LED灯
+
+- synonym: '卤素前大灯'
+  examples: |
+    - 卤素前大灯
+
+- synonym: '日间行车灯'
+  examples: |
+    - 日间行车灯
+    - 行车灯
+
+- synonym: '雾灯'
+  examples: |
+    - 雾灯
+
+- synonym: '触控大屏'
+  examples: |
+    - 触控大屏
+    - 触控屏
+
+- synonym: '八喇叭车载扬声系统'
+  examples: |
+    - 八喇叭车载扬声系统
+    - 扬声系统
+    - 八喇叭扬声系统
+    - 车载扬声系统
+
+- synonym: '主副驾驶座椅180度旋转'
+  examples: |
+    - 主副驾驶座椅180度旋转
+    - 座椅180度旋转
+    - 驾驶座椅180度旋转
+    - 主副驾驶座椅旋转
+    - 驾驶座椅旋转
+
+- synonym: '对向卡座'
+  examples: |
+    - 对向卡座
+
+- synonym: '卡座'
+  examples: |
+    - 卡座
+
+- synonym: '餐桌'
+  examples: |
+    - 餐桌
+
+- synonym: '固定式餐桌'
+  examples: |
+    - 固定式餐桌
+    - 固定餐桌
+
+- synonym: '升降餐桌'
+  examples: |
+    - 升降餐桌
+
+- synonym: '手动升降餐桌'
+  examples: |
+    - 手动升降餐桌
+
+- synonym: '电动升降式餐桌'
+  examples: |
+    - 电动升降式餐桌
+    - 电动升降餐桌
+    - 升降式餐桌
+    - 电动餐桌
+    - 升降餐桌
+
+- synonym: '卡座电动升降窗'
+  examples: |
+    - 卡座电动升降窗
+    - 电动升降窗
+    - 卡座升降窗
+
+- synonym: '橱柜'
+  examples: |
+    - 橱柜
+
+- synonym: '一体式橱柜'
+  examples: |
+    - 一体式橱柜
+
+- synonym: '卫生间'
+  examples: |
+    - 卫生间
+
+- synonym: '一体式卫生间'
+  examples: |
+    - 一体式卫生间
+
+- synonym: '天窗'
+  examples: |
+    - 天窗
+
+- synonym: '侧窗'
+  examples: |
+    - 侧窗
+
+- synonym: '电动踏步'
+  examples: |
+    - 电动踏步
+    - 踏步
+
+- synonym: '铝合金轮毂'
+  examples: |
+    - 铝合金轮毂
+    - 轮毂
+    - 铝合金
+
+- synonym: '乘客舱门'
+  examples: |
+    - 乘客舱门
+    - 舱门
+
+- synonym: '遮阳篷'
+  examples: |
+    - 遮阳篷
+
+- synonym: '贯通储物舱'
+  examples: |
+    - 贯通储物舱
+    - 储物舱
+
+- synonym: '外置抽拉厨房'
+  examples: |
+    - 外置抽拉厨房
+    - 抽拉厨房
+
+- synonym: '外置厨房'
+  examples: |
+    - 外置厨房
+    - 厨房
+
+- synonym: '车尾自行车架和爬梯安装孔位'
+  examples: |
+    - 车尾自行车架和爬梯安装孔位
+    - 车尾自行车架
+    - 爬梯安装孔位
+    - 孔位
+
+- synonym: '照明系统'
+  examples: |
+    - 照明系统
+
+- synonym: '车内照明系统'
+  examples: |
+    - 车内照明系统
+    - 车内照明
+
+- synonym: '氛围灯'
+  examples: |
+    - 氛围灯
+
+- synonym: '电动升顶帐篷'
+  examples: |
+    - 电动升顶帐篷
+    - 帐篷
+    - 升顶帐篷
+    - 电动帐篷
+
+- synonym: '无钥匙进入及一键启动'
+  examples: |
+    - 无钥匙进入及一键启动
+    - 无钥匙进入
+    - 一键启动
+    - 一键启动及无钥匙进入
+
+- synonym: '开关'
+  examples: |
+    - 开关
+
+- synonym: '插座'
+  examples: |
+    - 插座
+    - 插口
+
+- synonym: '开关插座'
+  examples: |
+    - 开关插座
+
+- synonym: '蜘蛛智联车联网'
+  examples: |
+    - 蜘蛛智联车联网
+    - 智联车联网
+    - 蜘蛛车联网
+    - 蜘蛛智联
+    - 车联网
+
+- synonym: '上汽阿里斑马智行互联系统'
+  examples: |
+    - 上汽阿里斑马智行互联系统
+    - 互联系统
+    - 智行系统
+
+- synonym: '娱乐主机'
+  examples: |
+    - 娱乐主机
+
+- synonym: '方向盘'
+  examples: |
+    - 方向盘
+
+- synonym: '多功能方向盘'
+  examples: |
+    - 多功能方向盘
+
+- synonym: '真皮多功能方向盘'
+  examples: |
+    - 真皮多功能方向盘
+    - 真皮方向盘
+
+- synonym: '驾驶模式'
+  examples: |
+    - 驾驶模式
+
+- synonym: '三模驾驶模式'
+  examples: |
+    - 三模驾驶模式
+    - 三模驾驶
+
+- synonym: '自动前雨刮'
+  examples: |
+    - 自动前雨刮
+    - 前雨刮
+
+- synonym: '智能感应雨刮'
+  examples: |
+    - 智能感应雨刮
+    - 感应雨刮
+    - 智能雨刷
+
+- synonym: '电动助力转向'
+  examples: |
+    - 电动助力转向
+    - 电子助力转向
+    - 电动转向
+    - 电子转向
+
+- synonym: '液压动力转向'
+  examples: |
+    - 动力转向
+
+- synonym: '电子手刹'
+  examples: |
+    - 电子手刹
+
+- synonym: '电子驻车制动'
+  examples: |
+    - 电子驻车制动
+    - 驻车制动
+
+- synonym: '后视镜'
+  examples: |
+    - 后视镜
+
+- synonym: '外后视镜'
+  examples: |
+    - 外后视镜
+
+- synonym: '电动电加热外后视镜'
+  examples: |
+    - 电动电加热外后视镜
+    - 电动电加热后视镜
+    - 电动外后视镜
+    - 电加热外后视镜
+    - 电热后视镜
+    - 电动后视镜
+
+- synonym: '流媒体后视镜'
+  examples: |
+    - 流媒体后视镜
+
+- synonym: '三路流媒体后视镜'
+  examples: |
+    - 三路流媒体后视镜
+
+- synonym: '定速巡航'
+  examples: |
+    - 定速巡航
+    - 巡航
+
+- synonym: '钥匙'
+  examples: |
+    - 钥匙
+
+- synonym: '遥控钥匙'
+  examples: |
+    - 遥控钥匙
+
+- synonym: '智能遥控钥匙'
+  examples: |
+    - 智能遥控钥匙
+    - 遥控钥匙
+    - 智能钥匙
+
+- synonym: '空调'
+  examples: |
+    - 空调
+
+- synonym: '行车空调'
+  examples: |
+    - 行车空调
+
+- synonym: '前后独立自动空调'
+  examples: |
+    - 前后独立自动空调
+    - 独立空调
+    - 自动空调
+    - 空调
+
+- synonym: '驻车加热系统'
+  examples: |
+    - 驻车加热系统
+    - 驻车加热
+    - 加热系统
+
+- synonym: '直流变频空调'
+  examples: |
+    - 直流变频空调
+    - 变频空调
+    - 直流空调
+
+- synonym: '驻车空调'
+  examples: |
+    - 驻车空调
+
+- synonym: '智能触屏电视'
+  examples: |
+    - 智能触屏电视
+    - 触屏电视
+
+- synonym: '重力加水口'
+  examples: |
+    - 重力加水口
+    - 加水口
+    - 重力加水
+
+- synonym: '市电充电口'
+  examples: |
+    - 市电充电口
+    - 充电口
+    - 市电充电
+
+- synonym: '外接市电口'
+  examples: |
+    - 外接市电口
+    - 外接电口
+
+- synonym: '标准市电口'
+  examples: |
+    - 标准市电口
+    - 标准电口
+
+- synonym: '外置卡式炉'
+  examples: |
+    - 外置卡式炉
+
+- synonym: '外置抽拉卡式炉'
+  examples: |
+    - 外置抽拉卡式炉
+    - 抽拉卡式炉
+    - 卡式炉
+    - 外置炉
+
+- synonym: '尾部爬梯'
+  examples: |
+    - 梯子
+
+- synonym: '用电包'
+  examples: |
+    - 用电包
+
+- synonym: '用电旗舰包'
+  examples: |
+    - 用电旗舰包
+
+- synonym: '用电无忧包'
+  examples: |
+    - 用电无忧包
+
+- synonym: '智能无忧包'
+  examples: |
+    - 智能无忧包
+
+- synonym: '大额头用电旗舰包'
+  examples: |
+    - 大额头用电旗舰包
+    - 大额头旗舰包
+
+- synonym: '小额头用电旗舰包'
+  examples: |
+    - 小额头用电旗舰包
+    - 小额头旗舰包
+
+- synonym: '大额头用电无忧包'
+  examples: |
+    - 大额头用电无忧包
+    - 大额头无忧包
+
+- synonym: '小额头用电无忧包'
+  examples: |
+    - 小额头用电无忧包
+    - 小额头无忧包
+
+- synonym: '舒享家居包'
+  examples: |
+    - 舒享家居包
+    - 家居包
+
+- synonym: '限高防撞预警'
+  examples: |
+    - 限高防撞预警
+    - 防撞预警
+    - 限高预警
+
+- synonym: '太阳能电池板'
+  examples: |
+    - 太阳能电池板
+    - 电池板
+    - 太阳能电池
+
+- synonym: '电动升降餐桌'
+  examples: |
+    - 电动升降餐桌
+
+- synonym: '卫星接收器'
+  examples: |
+    - 卫星接收器
+
+- synonym: '动中通卫星接收器'
+  examples: |
+    - 动中通卫星接收器
+    - 卫星接收器
+    - 动中通卫星
+    - 动中通接收器
+
+- synonym: '随动式纱门'
+  examples: |
+    - 随动式纱门
+    - 纱门
+    - 随动纱门

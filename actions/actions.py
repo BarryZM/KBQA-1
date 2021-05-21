@@ -16,7 +16,7 @@ from rasa_sdk.events import SlotSet
 
 from knowledge_base.kg_operate import KnowledgeGraphOp
 from knowledge_base.schemas import pron_mention, enterprise_info
-from knowledge_base.utils import contain_attribute
+from knowledge_base.utils import contain_attribute, check_query_result
 from FAQ.faq_match import FAQ_match
 from FAQ.faq_match import FAQ_BASE_DIR
 
@@ -58,7 +58,7 @@ class ActionKBQA(Action):
             if flag  and object_type is None:
                 result = self.KGOp.query_attribute('品牌', entity_name='上汽大通', attribute=attribute)
                 # 防止result为空
-                if len(result) != 0:
+                if check_query_result(result):
                     dispatcher.utter_message(template='utter_KBQA/enterprise_information', answer='小通为您查询到:')
                     for k, v in result.items():
                         answer = k + ': ' + v
@@ -74,8 +74,9 @@ class ActionKBQA(Action):
             # 查询 车系信息
             else:
                 result = self.KGOp.query_nodes(label='品牌', relationship='车系')
+                print('debug info: ', result)
                 # 防止result为空
-                if len(result) != 0:
+                if check_query_result(result):
                     dispatcher.utter_message(template='utter_KBQA/enterprise_information', answer='小通为您找到了下列车系:')
                     listed_items = ['车系']
                     for k, v in enumerate(result):
@@ -139,7 +140,7 @@ class ActionKBQA(Action):
                 # 查车系节点 -》车型 -》车型节点
                 result = self.KGOp.query_nodes(label='车系', entity_name=car_series, relationship=object_type)
                 # 防止result为空
-                if len(result) != 0:
+                if check_query_result(result):
                     dispatcher.utter_message(template='utter_KBQA/vehicle_information', answer='小通为您查到下列车型:')
                     listed_items = ['车型']
                     for k, v in enumerate(result):
@@ -161,7 +162,7 @@ class ActionKBQA(Action):
                 # G20的市场价格是多少 ==》将G20所有车型的价格返回 ==》G20-->车型-->属性
                 result = self.KGOp.query_attribute(label='车系', entity_name=car_series, attribute=attribute, relationship='车型')
                 # 防止result为空
-                if len(result) != 0:
+                if check_query_result(result):
                     dispatcher.utter_message(template='utter_KBQA/vehicle_information', answer='小通为您查询到如下结果:')
                     # 判断是否是具体的某个车型
                     # 确定指代
